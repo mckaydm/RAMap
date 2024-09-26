@@ -95,6 +95,10 @@ add_executable(move_demo
   src/move_demo_node.cpp
 )
 
+add_executable(RA_move_demo 
+  src/RA_move_demo_node.cpp
+) 
+
 add_executable(iterator_benchmark
   src/iterator_benchmark.cpp
 )
@@ -164,6 +168,12 @@ target_link_libraries(
 )
 
 target_link_libraries(
+  RA_move_demo
+  ${catkin_LIBRARIES}
+) 
+
+
+target_link_libraries(
   iterator_benchmark
   ${catkin_LIBRARIES}
 )
@@ -218,6 +228,7 @@ install(
     iterator_benchmark
     iterators_demo
     move_demo
+    RA_move_demo
     normal_filter_comparison_demo
     octomap_to_gridmap_demo
     opencv_demo
@@ -251,6 +262,7 @@ if(CATKIN_ENABLE_TESTING)
     iterator_benchmark
     iterators_demo
     move_demo
+    RA_move_demo
     normal_filter_comparison_demo
     octomap_to_gridmap_demo
     opencv_demo
